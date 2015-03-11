@@ -11,6 +11,8 @@ RUN mkdir /elasticsearch \
 # Mount elasticsearch.yml config
 ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
+RUN /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.4.6
+
 # Expose ports.
 #   - 9200: HTTP
 #   - 9300: transport
