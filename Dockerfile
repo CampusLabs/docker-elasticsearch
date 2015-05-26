@@ -1,7 +1,7 @@
 FROM orgsync/java8
 MAINTAINER Clifton King <cliftonk@gmail.com>
 
-ENV ELASTICSEARCH_VERSION 1.3.4
+ENV ELASTICSEARCH_VERSION 1.5.2
 
 # Install ElasticSearch.
 RUN mkdir /elasticsearch \
@@ -11,7 +11,7 @@ RUN mkdir /elasticsearch \
 # Mount elasticsearch.yml config
 ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
-RUN /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.4.6
+RUN /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.5.2
 
 # Expose ports.
 #   - 9200: HTTP
