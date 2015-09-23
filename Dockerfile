@@ -11,7 +11,8 @@ RUN mkdir /elasticsearch \
 # Mount elasticsearch.yml config
 ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
-RUN /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.5.2
+RUN /elasticsearch/bin/plugin -i lmenezes/elasticsearch-kopf/1.5.2 && \
+    /elasticsearch/bin/plugin -i elasticsearch/elasticsearch-cloud-aws/2.5.1
 
 # Expose ports.
 #   - 9200: HTTP
