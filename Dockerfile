@@ -1,5 +1,5 @@
-FROM orgsync/java8
-MAINTAINER Clifton King <cliftonk@gmail.com>
+FROM quay.io/orgsync/java:1.8
+MAINTAINER Joshua Griffith <joshua@orgsync.com>
 
 ENV ELASTICSEARCH_VERSION 1.5.2
 
