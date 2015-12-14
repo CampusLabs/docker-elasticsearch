@@ -1,23 +1,2 @@
-FROM quay.io/orgsync/java:1.8
-MAINTAINER Joshua Griffith <joshua@orgsync.com>
-
-ENV ELASTICSEARCH_VERSION 2.1.1
-
-# Install ElasticSearch.
-RUN mkdir /elasticsearch \
-    && wget -q -O - "https://download.elasticsearch.org/elasticsearch/elasticsearch/elasticsearch-$ELASTICSEARCH_VERSION.tar.gz" \
-        | tar xzC /elasticsearch --strip-components=1
-
-# Mount elasticsearch.yml config
-ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
-
-RUN /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/2.1.1
-
-# Expose ports.
-#   - 9200: HTTP
-#   - 9300: transport
-EXPOSE 9200
-EXPOSE 9300
-
-# Define default command.
-CMD ["/elasticsearch/bin/elasticsearch"]
+FROM elasticsearch:2.1.0
+RUN /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.1.1
