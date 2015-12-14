@@ -1,7 +1,7 @@
 FROM quay.io/orgsync/java:1.8
 MAINTAINER Joshua Griffith <joshua@orgsync.com>
 
-ENV ELASTICSEARCH_VERSION 1.5.2
+ENV ELASTICSEARCH_VERSION 2.1.1
 
 # Install ElasticSearch.
 RUN mkdir /elasticsearch \
@@ -11,7 +11,7 @@ RUN mkdir /elasticsearch \
 # Mount elasticsearch.yml config
 ADD elasticsearch.yml /elasticsearch/config/elasticsearch.yml
 
-RUN /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/1.5.2
+RUN /elasticsearch/bin/plugin --install lmenezes/elasticsearch-kopf/2.1.1
 
 # Expose ports.
 #   - 9200: HTTP
