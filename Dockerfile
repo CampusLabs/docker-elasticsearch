@@ -1,2 +1,3 @@
-FROM elasticsearch:2.1.0
-RUN /usr/share/elasticsearch/bin/plugin install lmenezes/elasticsearch-kopf/2.1.1
+FROM elasticsearch:5.0.0
+
+COPY elasticsearch.yml /usr/share/elasticsearch/config/elasticsearch.yml
