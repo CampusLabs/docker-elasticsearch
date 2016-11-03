@@ -1,0 +1,11 @@
+{
+  "consul": "{{ .CONSUL_URL }}:8500",
+  "services": [
+    {
+      "name": "elasticsearch",
+      "port": 9200,
+      "poll": 10,
+      "ttl": 30
+    }
+  ]
+}
