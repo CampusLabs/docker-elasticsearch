@@ -4,6 +4,7 @@
     {
       "name": "elasticsearch",
       "port": 9200,
+      "health": "curl -fso /dev/null localhost:9200",
       "poll": 10,
       "ttl": 30
     }
