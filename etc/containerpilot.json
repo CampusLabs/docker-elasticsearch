@@ -6,7 +6,8 @@
       "port": 9200,
       "health": "curl -fso /dev/null localhost:9200",
       "poll": 10,
-      "ttl": 30
+      "ttl": 30,
+      "consul": {"deregisterCriticalServiceAfter": "90m"}
     }
   ]
 }

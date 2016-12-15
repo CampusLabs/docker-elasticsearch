@@ -1,6 +1,6 @@
-FROM elasticsearch:5.0.0
+FROM elasticsearch:5.1.1
 
-ENV CONTAINERPILOT_VERSION 2.4.4
+ENV CONTAINERPILOT_VERSION 2.6.0
 RUN curl -L https://github.com/joyent/containerpilot/releases/download/$CONTAINERPILOT_VERSION/containerpilot-$CONTAINERPILOT_VERSION.tar.gz | \
       tar xz -C /usr/local/bin/
 
